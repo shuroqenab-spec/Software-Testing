@@ -1,7 +1,8 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures';
+
 
 test('BrandFilter - single brand', async ({ page }) => {
-  await page.goto('https://practicesoftwaretesting.com/');
+
 
   const brandCheckbox = page.getByLabel('ForgeFlex Tools');
 

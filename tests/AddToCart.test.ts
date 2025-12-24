@@ -1,7 +1,7 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures';
+
 
 test('Add to Cart', async ({ page }) => {
-  await page.goto('https://practicesoftwaretesting.com/');
 
   const products = page.locator('[data-test^="product-"]');
   await expect(products.first()).toBeVisible();

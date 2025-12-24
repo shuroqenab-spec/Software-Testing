@@ -1,7 +1,6 @@
-import { test } from '@playwright/test';
+import { test, expect } from './fixtures';
 
 test('move slider multiple times and finish', async ({ page }) => {
-  await page.goto('https://practicesoftwaretesting.com/');
 
   const handle = page.locator('.ngx-slider-pointer').first();
   await handle.waitFor({ state: 'visible' });

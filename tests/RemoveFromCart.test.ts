@@ -1,7 +1,8 @@
 
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures';
+
 test('Remove From Cart', async ({ page }) => {
-await page.goto('https://practicesoftwaretesting.com/');
+
 const products = page.locator('[data-test^="product-"]');
 const count = await products.count();
 const randomIndex = Math.floor(Math.random() * count);

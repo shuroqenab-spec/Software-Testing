@@ -1,8 +1,7 @@
-import { test } from '@playwright/test';
+import { test, expect } from './fixtures';
 
 test('sort products and finish', async ({ page }) => {
-  await page.goto('https://practicesoftwaretesting.com/');
-
+  
   const sort = page.locator('[data-test="sort"]');
 
   await sort.selectOption('name,asc');

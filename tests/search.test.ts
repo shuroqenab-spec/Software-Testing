@@ -1,8 +1,8 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures';
+
 
 test('Search for product', async ({ page }) => {
 
-  await page.goto('https://practicesoftwaretesting.com/');
 
   await page.locator('[data-test="search-query"]').fill('Bolt cutters');
 

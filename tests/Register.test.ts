@@ -15,9 +15,15 @@ test('Register new user', async ({ page }) => {
   await page.locator('[data-test="postal_code"]').fill('12345');
   await page.locator('[data-test="phone"]').fill('0591234567');
   await page.locator('[data-test="email"]').fill(uniqueEmail);
-  await page.locator('[data-test="password"]').fill('Abs12345@@#');
+  await page.locator('[data-test="password"]').fill('Abs12345@@gsfgsadfl132hdh547fnnf');
   await page.locator('[data-test="register-submit"]').click();
   await expect(page).not.toHaveURL(/\/auth\/register$/);
 
-await expect(page).toHaveURL('https://practicesoftwaretesting.com/auth/login');
+ await page.goto('https://practicesoftwaretesting.com/auth/login');
+
+  await page.locator('[data-test="email"]').fill(uniqueEmail);
+  await page.locator('[data-test="password"]').fill('Abs12345@@gsfgsadfl132hdh547fnnf');
+  await page.locator('[data-test="login-submit"]').click();
+
+  await expect(page).not.toHaveURL(/\/auth\/login$/);
 });
