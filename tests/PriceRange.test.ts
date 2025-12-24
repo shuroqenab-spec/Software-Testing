@@ -1,12 +1,11 @@
-import { test, expect } from './fixtures';
+import { test, expect } from "../fixtures";
 
-test('move slider multiple times and finish', async ({ page }) => {
-
-  const handle = page.locator('.ngx-slider-pointer').first();
-  await handle.waitFor({ state: 'visible' });
+test("move slider multiple times and finish", async ({ page }) => {
+  const handle = page.locator(".ngx-slider-pointer").first();
+  await handle.waitFor({ state: "visible" });
   await handle.scrollIntoViewIfNeeded();
   const box = await handle.boundingBox();
-  if (!box) throw new Error('Slider handle bounding box not found');
+  if (!box) throw new Error("Slider handle bounding box not found");
 
   const startX = box.x + box.width / 2;
   const y = box.y + box.height / 2;
