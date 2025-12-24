@@ -1,6 +1,6 @@
-import { test, expect } from './fixtures';
+import { test, expect } from '../fixtures';
 
-
+test.describe('Cart Feature @cart', () => {
 test('Add to Cart', async ({ page }) => {
 
   const products = page.locator('[data-test^="product-"]');
@@ -16,4 +16,5 @@ test('Add to Cart', async ({ page }) => {
     expect(page.getByText('Product added to shopping cart')).toBeVisible({ timeout: 5000 }),
     page.locator('[data-test="add-to-cart"]').click()
   ]);
+});
 });

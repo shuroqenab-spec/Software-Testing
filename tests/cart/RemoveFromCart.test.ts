@@ -1,5 +1,5 @@
 import { test, expect } from "../fixtures";
-
+test.describe('Cart Feature @cart', () => {
 test("Remove From Cart", async ({ page }) => {
   const products = page.locator('[data-test^="product-"]');
   const count = await products.count();
@@ -15,4 +15,5 @@ test("Remove From Cart", async ({ page }) => {
   await expect(
     page.getByText("The cart is empty. Nothing to display.")
   ).toBeVisible();
+});
 });

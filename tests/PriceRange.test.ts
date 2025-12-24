@@ -1,4 +1,4 @@
-import { test, expect } from "../fixtures";
+import { test, expect } from "./fixtures";
 
 test("move slider multiple times and finish", async ({ page }) => {
   const handle = page.locator(".ngx-slider-pointer").first();
